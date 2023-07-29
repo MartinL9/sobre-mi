@@ -3,57 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resumen del Alumno</title>
+    <title>MartinL9 - Web Developer Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,200&family=Raleway:wght@700&display=swap');
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <nav id="navbar">
-        <ul>
-            <li><a href="#informacion">Información</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+    <!-- Nav para ir a secciones especificas de la pagina -->
+    <nav id="navbar" class="nav">
+        <ul class="nav-list">
+            <li><a href="#welcome-section">Home</a></li>
+            <li><a href="#informacion">About</a></li>
+            <li><a href="#projects">My Work</a></li>
+            <li><a href="#contacto">Contact</a></li>
         </ul>
-    </nav>    
+    </nav> 
     
-    <header>
-        <h1>Información del Alumno</h1>
-    </header>
+    <!-- Seccion Home --> 
+    <section id="welcome-section" class="welcome-section">
+        <img src="L5wWwLpz.jpg" alt="Profile-picture-placeholder" class="img-profile">
+        <h1>Martin Rodriguez</h1>
+        <p>Self-Taught Front-End Developer</p>
+    </section>
 
-    <main>
-        <article>
-            <h2>Datos Básicos</h2>
-            <ul>
-                <li><strong>Nombre:</strong> Martin Rodriguez</li>
-                <li><strong>Edad:</strong> 24 años</li>
-                <li><strong>País:</strong> Argentina</li>
-            </ul>
-        </article>
+    <!-- Seccion About -->
+    <section id="informacion" class="info-section">
+            <article class="article-data">
+                <h2 class="about-me-header">About me</h2>
+                <p>Hello there! I'm Martin Rodriguez a self-taught Front-End Developer from Argentina.</p>
+                <h2>Interests</h2>
+                <ul>
+                    <li><i class="fa-solid fa-code"></i> Coding</li>
+                    <li><i class="fa-solid fa-gamepad"></i> Gaming</li>
+                    <li><i class="fa-solid fa-book-open-reader"></i> Reading</li>
+                </ul>
+                <h2>Experience</h2>
+                <p>Personal projects</p>
+                <p>Customer service</p>
+                <h2>SKILLS</h2>
+                <ul class="skill-ul">
+                    <li class="skill-li"><i class="fa-brands fa-html5"> HTML</i></li>
+                    <li class="skill-li"><i class="fa-brands fa-css3"> CSS</i></li>
+                    <li class="skill-li"><i class="fa-brands fa-bootstrap"> BOOTSTRAP</i></li>
+                    <li class="skill-li"><i class="fa-brands fa-js"> JAVASCRIPT</i></li>
+                    <li class="skill-li"><i class="fa-brands fa-git"> GIT</i></li>
+                </ul>
+                
+            </article>
+    </section>
 
-        <article>
-            <h2>Intereses</h2>
-            <ul>
-                <li>Programación web</li>
-                <li>Gaming</li>
-                <li>Baloncesto</li>
-            </ul>
-        </article>
+    <!-- Seccion My Work -->
+    <section id="projects" class="projects-section">
+        <h2 class="project-section-header">These are some of my projects</h2>
+        <p>This Section Is Under Construction</p>
+        <div class="projects-grid">
+            <video width="640" height="360" controls src="videoPlaceHolder.mov" class="project project-tile"></video>
+            <video width="640" height="360" controls src="videoPlaceHolder.mov" class="project project-tile"></video>
+        </div>
+    </section>
 
-        <article>
-            <h2>Experiencias</h2>
-            <p>Proyectos personales</p>
-            <p>Servicio al cliente</p>
-        </article>
-    </main>
-
-    <aside>
+    <!-- Seccion Contact -->
+    <aside id="contacto">
+        <div class="contacto-header">
+            <h2>Let's Connect</h2>
+        </div>
         <ul class="contacto">
-            <li><a href="www.linkedin.com/in/leonardo-martin-rodriguez">Mi Linkedin</a></li>
-            <li><a href="https://github.com/MartinL9">Mi Github</a></li>
-            <li><a href="https://twitter.com/SoyMartinR">Mi Twitter</a></li>
+            <li><a href="https://linkedin.com/in/leonardo-martin-rodriguez" class="btn contact-details"><i class="fa-brands fa-linkedin"></i> Mi Linkedin</a></li>
+            <li><a href="https://github.com/MartinL9" class="btn contact-details"> <i class="fa-brands fa-github"></i> Mi Github</a></li>
+            <li><a href="https://twitter.com/SoyMartinR" class="btn contact-details"><i class="fa-brands fa-twitter"></i> Mi Twitter</a></li>
         </ul>
     </aside>
 
+    <!-- Pie De Pagina -->
     <footer>
-
+        <p>This is just a portfolio in early development</p>
+        <p>© Created for MartinL9</p>
     </footer>
 </body>
 </html>

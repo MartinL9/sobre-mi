@@ -1,13 +1,234 @@
+/* Estilos de Texto y Cuerpo */
 * {
     margin: 0;
     padding: 0;
 }
 
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
+:root {
+    --main-white: #f0f0f0;
+    --main-red: #be3144;
+    --main-blue: #45567d;
+    --main-gray: #303841;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    display: block;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--main-white);
+    display: block;
+}
+
+h1 {
+    font-size: 6rem;
+}
+
+h2 {
+    font-size: 4.2rem;
+}
+
+h1, h2 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    text-align: center;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+/* Fin de Estilos de texto y cuerpo */
+
+/* Estilos de la barra de navegacion */
+nav {
+    display: block;
+}
+
 .nav {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    background: var(--main-red);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
     z-index: 10;
+}
+
+.nav-list {
+    display: flex;
+    margin-right: 2rem;
+}
+
+.nav-list a {
+    display: block;
+    font-size: 2.2rem;
+    padding: 2rem;
+}
+
+/* Fin de estilos barra de navegacion */
+
+/* Estilos de listas y Enlaces */
+a {
+    text-decoration: none;
+    color: var(--main-white);
+}
+
+ul {
+    list-style: none;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+.skill-ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.skill-li {
+    margin-right: 2em;
+}
+/* Fin de listas y enlaces */
+
+/* Estilos seccion Home */
+.img-profile {
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.welcome-section, .article-data{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+}
+
+.welcome-section > p {
+    font-size: 3rem;
+    font-weight: 200;
+    font-style: italic;
+    color: var(--main-red);
+}
+
+.info-section {
+    text-align: center;
+    padding: 8rem 2rem;
+    background: #000;
+    background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+}
+/* Fin de estilos de Home */
+
+/* Estilos About me */
+.about-me-header, .projects-section-header {
+    max-width: 640px;
+    margin: 0 auto 4rem auto;
+    border-bottom: 0.2rem solid var(--main-white);
+}
+/* Fin About me */
+
+/* Estilos projects */
+.projects-section {
+    text-align: center;
+    padding: 8rem 2rem;
+    background-color: var(--main-blue);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 4rem;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+}
+
+.project {
+    background-color: var(--main-gray);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+}
+
+.project-tile {
+    font-size: 2rem;
+    padding: 2rem 0.5;
+}
+/* Fin estilos projects */
+
+/* Estilos Seccion Contact */
+aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 80vh;
+    padding: 0 2rem;
+    background: var(--main-gray);
+}
+
+.contacto-header > h2 {
+    font-size: 6rem;
+}
+
+.contacto {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 980px;
+    margin-top: 4rem;
+    flex-wrap: wrap;
+}
+
+.contact-details {
+    font-size: 2.4rem;
+    text-shadow: 2px 2px 1px #1f1f1f;
+    transition: transform 0.3s ease-out;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 2px;
+}
+/* Fin Estilos Contact */
+
+footer {
+    font-weight: 300;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem;
+    background: var(--main-gray);
+    border-top: 4px solid var(--main-red);
 }
