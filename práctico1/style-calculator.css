@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Colores */
+:root {
+    --main-gray: #303841;
+    --main-gray-dark: #1e242b;
+    --main-white: #f0f0f0;
+    --main-red: #be3144;
+}
+
+body {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.4;
+    background-color: var(--main-gray);
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+/* Estilos de Textos */
+.title {
+    color: var(--main-white);
+    font-size: 4rem;
+    font-family: 'Raleway', sans-serif;
+}
+
+.description {
+    color: var(--main-red);
+}
+
+.title, .description {
+    text-align: center;
+}
+
+label, p {
+    color: var(--main-red);
+}
+
+.p-result {
+margin: 25px;
+}
+
+.span-result {
+    color: var(--main-white);
+}
+
+/* Estilo de "cajas" y contenedores */
+input[type="number"], select {
+    display: block;
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid;
+    border-radius: 4px;
+}
+
+select {
+    width: 58%;
+    margin-left: 10px;
+}
+
+div {
+    display: block;
+}
+
+.select-container {
+    display: flex;
+    align-items: center;
+}
+
+.calculator {
+    background: var(--main-gray-dark);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    padding-right: 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Estilo de botones */
+button {
+    background-color: #4CAF50;
+    color: var(--main-white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+/* Estilo del historial */
+.historial-tabla {
+    color: var(--main-white);
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.historial-tabla td {
+    padding: 6px;
+    color: var(--main-red);
+}
+

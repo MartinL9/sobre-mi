@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Básica</title>
+    <link rel="stylesheet" href="style-calculator.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,200&family=Raleway:wght@700&display=swap');
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <h1 class="title">Calculadora Básica</h1>
+    <p class="description">Hecha con HTML5, CSS3 y JS</p>
+
+    <br>
+
+    <div class="calculator">
+        <input type="number" id="num1" placeholder="Primer Número">
+
+        <!-- Contenedor del selector -->
+        <div class="select-container">
+            <label for="operator">Operación a realizar:</label>
+            <select id="operator">
+                <option value="+"> + (Suma)</option>
+                <option value="-"> - (Resta)</option>
+                <option value="*"> * (Multiplicación)</option>
+                <option value="÷"> ÷ (División)</option>
+            </select>
+        </div>
+
+        <input type="number" id="num2" placeholder="Segundo Número">
+
+        <!-- Botones -->
+        <button onclick="calcular()">Calcular</button>
+        <button onclick="clearDisplays()">Borrar</button>
+
+        <p class="p-result">Resultado: <span id="resultado" class="span-result"></span></p>    
+
+        <!-- Tabla de historial -->
+        <label for="historial">Historial de operaciónes</label>
+        <table class="historial-tabla">
+        <thead>
+            <tr>
+                <th>Operaciónes</th>
+                <th>Resultados</th>
+            </tr>
+        </thead>
+        <tbody id="historial">
+        </tbody>
+    </table>
+    </div>
+    
+    <script src="script-calculator.js"></script>
+</body>
+</html>
