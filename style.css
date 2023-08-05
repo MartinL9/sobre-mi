@@ -22,6 +22,24 @@ html {
     display: block;
 }
 
+@media (max-width: 75em) {
+    html {
+        font-size: 60%;
+    }
+}
+
+@media (max-width: 61.25em) {
+    html {
+        font-size: 58%;
+    }
+}
+
+@media (max-width: 28.75em) {
+    html {
+        font-size: 55%;
+    }
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     font-size: 1.8rem;
@@ -52,6 +70,11 @@ p {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 }
+
+img {
+    display: block;
+    width: 100%;
+}
 /* Fin de Estilos de texto y cuerpo */
 
 /* Estilos de la barra de navegacion */
@@ -66,6 +89,7 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
+    height: 6rem;
     background: var(--main-red);
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
     z-index: 10;
@@ -160,7 +184,19 @@ ul {
 .projects-section {
     text-align: center;
     padding: 8rem 2rem;
-    background-color: var(--main-blue);
+    background: var(--main-blue);
+}
+
+.projects-section-header {
+    max-width: 640px;
+    margin: 0 auto 6rem auto;
+    border-bottom: 0.2rem solid var(--main-white);
+}
+
+@media (max-width: 28.75em) {
+    .projects-section-header {
+        font-size: 4rem;
+    }
 }
 
 .projects-grid {
@@ -173,10 +209,39 @@ ul {
     margin-bottom: 6rem;
 }
 
+@media (max-width: 30.625em) {
+    .projects-section {
+        padding: 6rem 1rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .project {
     background-color: var(--main-gray);
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     border-radius: 2px;
+}
+
+.project:hover .code {
+    color: #ff7f50;
+}
+
+.code {
+    color: var(--main-gray);
+    transition: color 0.3s ease-out;
+}
+
+.project-image {
+    height: calc(100% - 6.8rem);
+    width: 100%;
+    object-fit: cover;
+}
+
+.project-title {
+    font-size: 2rem;
 }
 
 .project-tile {
