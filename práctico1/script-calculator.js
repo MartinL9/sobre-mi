@@ -42,7 +42,7 @@ function calcular() {
     }
 
     //Comprobación y errores
-    if(isNaN(resultado)) {
+    if(isNaN(num1) || isNaN(num2)) {
         resultado = "Error Números inválidos";
     } else if(resultado === Infinity || resultado === -Infinity) {
         resultado = "Error el resultado es demasiado grande o infinito";
