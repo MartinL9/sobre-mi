@@ -51,16 +51,11 @@ margin: 25px;
 /* Estilo de "cajas" y contenedores */
 input[type="number"], select {
     display: block;
-    width: 90%;
+    width: 96%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid;
     border-radius: 4px;
-}
-
-select {
-    width: 58%;
-    margin-left: 10px;
 }
 
 div {
@@ -77,13 +72,12 @@ div {
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     padding: 30px;
-    padding-right: 0;
     max-width: 600px;
     margin: 0 auto;
 }
 
 /* Estilo de botones */
-button {
+.buttons-calculator {
     background-color: #4CAF50;
     color: var(--main-white);
     padding: 10px 20px;
@@ -91,6 +85,15 @@ button {
     border-radius: 4px;
     cursor: pointer;
     margin: 5px;
+    margin-top: 20px;
+}
+
+.button-th {
+    margin-bottom: 20px;
+}
+
+.button-th:hover, .delete:hover {
+    background-color: var(--main-red);
 }
 
 /* Estilo del historial */

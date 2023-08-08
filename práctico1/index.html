@@ -33,23 +33,28 @@
         <input type="number" id="num2" placeholder="Segundo Número">
 
         <!-- Botones -->
-        <button onclick="calcular()">Calcular</button>
-        <button onclick="clearDisplays()">Borrar</button>
+        <button class="buttons-calculator" onclick="calcular()">Calcular</button>
+        <button class="buttons-calculator delete" onclick="clearDisplays()">Borrar</button>
 
         <p class="p-result">Resultado: <span id="resultado" class="span-result"></span></p>    
 
         <!-- Tabla de historial -->
         <label for="historial">Historial de operaciónes</label>
         <table class="historial-tabla">
-        <thead>
-            <tr>
-                <th>Operaciónes</th>
-                <th>Resultados</th>
-            </tr>
-        </thead>
-        <tbody id="historial">
-        </tbody>
-    </table>
+            <thead>
+                <tr>
+                    <th colspan="2">
+                        <button class="buttons-calculator button-th" onclick="clearHistory()">Limpiar Historial</button>
+                    </th>
+                </tr>
+                <tr>
+                    <th>Operaciónes</th>
+                    <th>Resultados</th>
+                </tr>
+            </thead>
+            <tbody id="historial">
+            </tbody>
+        </table>
     </div>
     
     <script src="script-calculator.js"></script>

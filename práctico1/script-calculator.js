@@ -4,6 +4,14 @@ function clearDisplays() {
     document.getElementById("num2").value = "";
 }
 
+function clearHistory() {
+    let tbody = document.getElementById("historial");
+    
+    while(tbody.firstChild) {
+        tbody.removeChild(tbody.firstChild);
+    }
+}
+
 // Funcion main
 function calcular() {
     //Variables
