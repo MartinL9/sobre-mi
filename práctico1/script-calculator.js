@@ -55,9 +55,15 @@ function calcular() {
     let row = historialTabla.insertRow(0);
     let cellOperacion = row.insertCell(0);
     let cellResultado = row.insertCell(1);
-    cellOperacion.textContent = `${num1} ${operator} ${num2}`;
-    cellResultado.textContent = resultado;
-
+    
+    if(!isNaN(num1) && !isNaN(num2)) {
+        cellOperacion.textContent = `${num1} ${operator} ${num2}`;
+        cellResultado.textContent = resultado;
+    } else {
+        cellOperacion.textContent = "Operación inválida";
+        cellResultado.textContent = "Ingrese números";
+    }
+    
     document.getElementById('resultado').textContent = resultado;
 }
 
