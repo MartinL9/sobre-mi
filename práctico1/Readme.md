@@ -36,19 +36,19 @@ En caso de que ocurran errores durante el cálculo, la calculadora mostrará un 
 
 A continuación, se presentan algunos de los bugs de versiones anteriores de la calculadora y los arreglos realizados: 
 
-1. **División por cero muestra error no relacionado:**La división por cero no manejaba correctamente el caso de error y mostraba en su lugar otro error por numero invalido.
+1. **División por cero muestra error no relacionado:** La división por cero no manejaba correctamente el caso de error y mostraba en su lugar otro error por numero invalido.
     - **Arreglo:** Se ha ajustado la sección Comprobación y errores, donde la condicional ahora toma los valores numéricos en vez del resultado.
 
-2. **Resultado y operación se salia de su contenedor al ser infinito:**Infinitos causaban overflow en su contenedor.
+2. **Resultado y operación se salia de su contenedor al ser infinito:** Infinitos causaban overflow en su contenedor.
     - **Arreglo:** Se creo la condicional de si el resultado es infinito de un mensaje de error.
 
-3. **Resultado al ser un numero grande era ilegible:**Resultados grandes causaban overflow e ilegibilidad.
+3. **Resultado al ser un numero grande era ilegible:** Resultados grandes causaban overflow e ilegibilidad.
     - **Arreglo:** Se modificó la condicional para verificar si el valor absoluto del resultado es mayor al máximo seguro representable por JS.
 
-4. **Historial de operaciónes guardaba NaN "operación" NaN:**Al calcular sin ningún número en los inputs el historial guardaba NaN.
+4. **Historial de operaciónes guardaba NaN "operación" NaN:** Al calcular sin ningún número en los inputs el historial guardaba NaN.
     - **Arreglo:** Se creó una condicional que en vez de guardar NaN "operación" NaN, guarde Operación invalida Ingrese números.
 
-5. **Boton del historial solo eliminaba su primer elemento:**Al cliquear Limpiar Historial solo eliminaba el primer elemento en la lista dejando los otros intactos.
+5. **Boton del historial solo eliminaba su primer elemento:** Al cliquear Limpiar Historial solo eliminaba el primer elemento en la lista dejando los otros intactos.
     - **Arreglo:** Se hizo uso de un while para iniciar un bucle que se ejecutara mientras el "<tbody>" tenga elementos hijos, dentro del bucle se utilizó el método "removeChild()" para eliminar el primer hijo hasta que el bucle se complete.
 
 ## Créditos
