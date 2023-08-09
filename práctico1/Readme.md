@@ -49,7 +49,7 @@ A continuación, se presentan algunos de los bugs de versiones anteriores de la 
     - **Arreglo:** Se creó una condicional que en vez de guardar NaN "operación" NaN, guarde Operación invalida Ingrese números.
 
 5. **Boton del historial solo eliminaba su primer elemento:** Al cliquear Limpiar Historial solo eliminaba el primer elemento en la lista dejando los otros intactos.
-    - **Arreglo:** Se hizo uso de un while para iniciar un bucle que se ejecutara mientras el "<tbody>" tenga elementos hijos, dentro del bucle se utilizó el método "removeChild()" para eliminar el primer hijo hasta que el bucle se complete.
+    - **Arreglo:** Se hizo uso de un while para iniciar un bucle que se ejecutara mientras el "tbody" tenga elementos hijos, dentro del bucle se utilizó el método "removeChild()" para eliminar el primer hijo hasta que el bucle se complete.
 
 ## Créditos
 
