@@ -22,10 +22,14 @@ body {
 }
 
 /* Estilos de Textos */
-.title {
+.title, .title-2 {
     color: var(--main-white);
     font-size: 4rem;
     font-family: 'Raleway', sans-serif;
+}
+
+.title-2 {
+    font-size: 2rem;
 }
 
 .description {
