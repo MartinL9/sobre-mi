@@ -64,6 +64,15 @@ function calcular() {
         cellResultado.textContent = "Ingrese números";
     }
     
+    row.addEventListener('click', () => {
+        let textResult = cellResultado.textContent.trim();
+
+        if(!isNaN(textResult)) {
+            let numberResult = parseFloat(textResult);
+            document.getElementById('num1').value = numberResult;
+        }
+    });
+
     document.getElementById('resultado').textContent = resultado;
 }
 

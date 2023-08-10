@@ -109,3 +109,8 @@ div {
     color: var(--main-red);
 }
 
+#historial td:nth-child(2):hover {
+    cursor: pointer;
+    color: var(--main-white);
+    transition: color 0.5s ease-in-out;
+}

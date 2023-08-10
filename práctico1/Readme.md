@@ -9,7 +9,18 @@ Esta es una calculadora básica creada utilizando HTML, CSS y JavaScript. Puedes
 3. Ingresa los números y selecciona la operación que deseas realizar.
 4. Haz clic en el botón "Calcular" para ver el resultado.
 5. Haz clic si es necesario en el botón "Borrar" para limpiar los 2 campos de números.
-6. Haz clic si es necesario en "Limpiar Historial" para limpiar resultados y operaciones anteriores.
+6. Los resultados de tus operaciones se mostrarán en la tabla de historial.
+7. Haz clic si es necesario en "Limpiar Historial" para limpiar resultados y operaciones anteriores.
+
+## Historial Interactivo
+
+La característica principal de esta calculadora es el historial interactivo. Cuando haces clic en un resultado en la tabla de historial, el valor numérico se llena automáticamente en el primer campo de entrada.
+
+- Para usar un resultado del historial en un nuevo cálculo:
+  - Haz clic en la fila correspondiente en la tabla de historial.
+  - El número se llenará en el campo de entrada superior.
+  - Realiza una nueva operación con el número del historial y otro número de tu elección.
+  - Haz clic en "Calcular" para ver el nuevo resultado.
 
 ## Tecnologías Utilizadas
 
@@ -21,7 +32,7 @@ Esta es una calculadora básica creada utilizando HTML, CSS y JavaScript. Puedes
 
 - Realiza operaciones básicas de suma, resta, multiplicación y división.
 - Interfaz simple y fácil de usar.
-- Cuenta con un historial de operaciónes ademas de un botón para la limpieza de dicha sección.
+- Cuenta con un historial de operaciónes interactivo ademas de un botón para la limpieza de dicha sección.
 
 ## Manejo de Errores
 
