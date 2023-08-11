@@ -54,6 +54,7 @@ margin: 25px;
 
 /* Estilo de "cajas" y contenedores */
 input[type="number"], select {
+    text-align: center;
     display: block;
     width: 96%;
     padding: 10px;
@@ -68,6 +69,8 @@ select {
     border: 2px solid;
     border-color: var(--main-white);
     transition: background-color 0.3s ease;
+    text-align: justify;
+    padding-left: 108px;
 }
 
 select:hover, input[type="number"]:hover {
