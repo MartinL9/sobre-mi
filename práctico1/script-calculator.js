@@ -12,6 +12,16 @@ function clearHistory() {
     }
 }
 
+function formatResult(result) {
+    if (typeof result === 'number') {
+        if (Math.abs(result) > Number.MAX_SAFE_INTEGER) {
+            return "Error el resultado es demasiado grande y no se puede mostrar con precisión";
+        }
+        return parseFloat(result.toFixed(6)).toString();
+    }
+    return result;
+}
+
 // Funcion main
 function calcular() {
     //Variables
@@ -46,8 +56,6 @@ function calcular() {
         resultado = "Error Números inválidos";
     } else if(resultado === Infinity || resultado === -Infinity) {
         resultado = "Error el resultado es demasiado grande o infinito";
-    } else if(Math.abs(resultado) > Number.MAX_SAFE_INTEGER) {
-        resultado = "Error el resutado es demasiado grande y no se puede mostrar con precisión";
     }
 
     //Seleccion, almacenamiento y creador de celdas del historial
@@ -58,7 +66,7 @@ function calcular() {
     
     if(!isNaN(num1) && !isNaN(num2)) {
         cellOperacion.textContent = `${num1} ${operator} ${num2}`;
-        cellResultado.textContent = resultado;
+        cellResultado.textContent = formatResult(resultado);
     } else {
         cellOperacion.textContent = "Operación inválida";
         cellResultado.textContent = "Ingrese números";
@@ -73,7 +81,7 @@ function calcular() {
         }
     });
 
-    document.getElementById('resultado').textContent = resultado;
+    document.getElementById('resultado').textContent = formatResult(resultado);
 }
 
 
