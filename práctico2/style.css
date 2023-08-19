@@ -34,11 +34,23 @@ body {
     width: 45%;
 }
 
+.scoreBoard {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    text-align: center;
+    margin: 50px 20px;
+}
+
 .spanScore {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin: 0 10px;
+    margin: 0 20px;
+}
+
+.spanColor {
+    background-color: var(--main-red);
+    border-radius: 8px;
 }
 
 .btnContainer {
@@ -55,9 +67,9 @@ body {
     background-color: var(--main-white);
     color: var(--main-gray);
     border-radius: 50%;
-    border-color: var(--main-red);
+    border: 4px dotted var(--main-red);
     cursor: pointer;
-    transition: background-color 0.5s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .btnSelect:hover {

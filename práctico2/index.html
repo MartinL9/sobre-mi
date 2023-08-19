@@ -14,27 +14,26 @@
     <h1 class="title">PIEDRA, PAPEL O TIJERAS</h1>
 
     <div class="container">
-        
             <input type="text" id="textInput" placeholder="Ingrese un nombre">
             <button class="btnInput" id="submitBtn">Enviar</button>
 
         <div class="scoreBoard">
-            <span class="spanScore" id="output"></span>
-            <span class="spanScore" id="score">0 - 0</span>            
-            <span class="spanScore" id="comp">COMPUTADORA</span>
+            <span class="spanScore spanColor" id="output">TU</span>
+            <span class="spanScore" id="score"></span>            
+            <span class="spanScore spanColor" id="comp">COMPUTADORA</span>
         </div>
         
         <div class="btnContainer">
             <div class="button-group">
-                <button class="btnSelect"><i class="fa-solid fa-hand-back-fist fa-10x icon-center"></i></button>
+                <button class="btnSelect" id="piedra"><i class="fa-solid fa-hand-back-fist fa-10x icon-center"></i></button>
                 <span class="btnSpan">Piedra</span>
             </div>
             <div class="button-group">
-                <button class="btnSelect"><i class="fa-solid fa-hand fa-10x icon-center"></i></button>
+                <button class="btnSelect" id="papel"><i class="fa-solid fa-hand fa-10x icon-center"></i></button>
                 <span class="btnSpan">Papel</span>
             </div>
             <div class="button-group">
-                <button class="btnSelect"><i class="fa-solid fa-hand-scissors fa-10x icon-center"></i></button>
+                <button class="btnSelect" id="tijera"><i class="fa-solid fa-hand-scissors fa-10x icon-center"></i></button>
                 <span class="btnSpan">Tijera</span>
             </div>
         </div>
