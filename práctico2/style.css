@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --main-white: #f0f0f0;
+    --main-gray: #303841;
+    --main-red: #be3144;
+}
+
+body {
+    background-color: var(--main-gray);
+    color: var(--main-white);
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.title {
+    background-color: var(--main-white);
+    color: var(--main-gray);
+    margin: 50px auto 50px auto;
+    padding: 20px;
+    width: 43%;
+    font-size: 5rem;
+}
+
+.container {
+    background-color: var(--main-gray);
+    margin: 50px auto 50px auto;
+    width: 45%;
+}
+
+.spanScore {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 10px;
+}
+
+.btnContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    text-align: center;
+    margin: 20px 0 20px 0;
+}
+
+.btnSelect {
+    width: 175px;
+    height: 175px;
+    background-color: var(--main-white);
+    color: var(--main-gray);
+    border-radius: 50%;
+    border-color: var(--main-red);
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.btnSelect:hover {
+    background-color: var(--main-red);
+}
+
+.icon-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnSpan {
+    display: block;
+    margin-top: 10px;
+    color: var(--main-white);
+}
