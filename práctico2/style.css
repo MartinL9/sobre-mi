@@ -34,6 +34,62 @@ body {
     width: 45%;
 }
 
+.userNbox {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.userNbox p {
+    display: inline;
+    margin-right: 10px;
+}
+
+.userNbox i {
+    vertical-align: middle;
+    margin-top: 27px;
+}
+
+#textInput {
+    display: flex;
+    width: 50%;
+    padding: 10px;
+    margin: 10px auto;
+    font-size: x-large;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: var(--main-gray);
+    border: solid 2px var(--main-red);
+    border-radius: 8px;
+    color: var(--main-white);
+    transition: border 0.3s ease-in-out;
+}
+
+#textInput:hover {
+    border-color: var(--main-white);
+}
+
+.btnInput {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 6px;
+    height: 50px;
+    width: 50px;
+    margin: auto;
+    box-sizing: border-box;
+    border-radius: 50%;
+    font-size: xx-large;
+    cursor: pointer;
+    border: solid 2px var(--main-red);
+    color: var(--main-red);
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btnInput:hover {
+    background-color: var(--main-red);
+    color: var(--main-white);
+}
+
 .scoreBoard {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
@@ -74,6 +130,8 @@ body {
 
 .btnSelect:hover {
     background-color: var(--main-red);
+    color: var(--main-white);
+    border: 4px dotted var(--main-white);
 }
 
 .icon-center {

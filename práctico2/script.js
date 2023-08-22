@@ -1,3 +1,5 @@
+const pInput = document.getElementById('pInput');
+const iconInput = document.getElementById('iconInput');
 const textInput = document.getElementById('textInput');
 const submitBtn = document.getElementById('submitBtn');
 const outputDiv = document.getElementById('output');
@@ -9,15 +11,27 @@ const bannedWords = ['asesinato', 'masacre', 'suicido', 'canibal', 'decapitar', 
 
 let userScore = 0;
 let comScore = 0;
+let userName = '';
+let totalRounds = 0;
+
+btnPiedra.setAttribute('disabled', true);
+btnPapel.setAttribute('disabled', true);
+btnTijera.setAttribute('disabled', true);
 
 submitBtn.addEventListener('click', () => {
     const inputText = textInput.value;
     const containBw = bannedWords.some(word => inputText.toLowerCase().includes(word.toLowerCase()));
 
     if (inputText.trim() !== '' && inputText.length <= 20 && !containBw) {
+        userName = inputText;
         outputDiv.textContent = inputText;
+        pInput.style.display = 'none';
+        iconInput.style.display = 'none';
         textInput.style.display = 'none';
         submitBtn.style.display = 'none';
+        btnPiedra.removeAttribute('disabled');
+        btnPapel.removeAttribute('disabled');
+        btnTijera.removeAttribute('disabled');
     } else if (containBw) {
         alert('Por favor, ingrese un usuario sin palabras prohibidas.');
     } else {
@@ -30,14 +44,24 @@ btnPapel.addEventListener('click', () => play('papel'));
 btnTijera.addEventListener('click', () => play('tijera'));
 
 function play(userChoice) {
+    if (totalRounds >= 5) {
+        alert(`El juego ha terminado. Puntuación final para ${userName}: ${userScore} - ${comScore} Computadora\nReinicie el juego para volver a jugar.`);
+        btnPapel.setAttribute('disabled', true);
+        btnPiedra.setAttribute('disabled', true);
+        btnTijera.setAttribute('disabled', true);
+        return;
+    }
+
     const choice = ['piedra', 'papel', 'tijera'];
     const comChoice = choice[Math.floor(Math.random() * 3)];
-
     let result;
+
     if (textInput.value.trim() === '') {
         alert('Por favor, escriba un usuario antes de interactuar.');
     } else if (userChoice === comChoice) { 
         result = 'Empate';
+        play(userChoice);
+        return;
     } else if (
         (userChoice === 'piedra' && comChoice === 'tijera') || 
         (userChoice === 'papel' && comChoice === 'piedra') ||
@@ -51,4 +75,6 @@ function play(userChoice) {
     }
 
     scoreSp.textContent = `${userScore} - ${comScore}`;
+    totalRounds++;
+
 }
