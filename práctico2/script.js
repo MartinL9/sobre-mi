@@ -73,6 +73,7 @@ function resetAll() {
     iconInput.style.display = 'inline-block';
     textInput.style.display = 'flex';
     submitBtn.style.display = 'flex';
+    disableButtonsChoice();
 }
 
 function userSubmission() {
