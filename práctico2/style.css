@@ -1,3 +1,4 @@
+/* Colores y Body*/ 
 * {
     margin: 0;
     padding: 0;
@@ -28,6 +29,8 @@ body {
     font-size: 5rem;
 }
 
+
+/* Estilos container, input usuario, botones submitBtn y restartBtn */
 .container {
     background-color: var(--main-gray);
     margin: 50px auto 50px auto;
@@ -68,7 +71,7 @@ body {
     border-color: var(--main-white);
 }
 
-.btnInput {
+.btnInput, #restartBtn {
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -82,14 +85,21 @@ body {
     cursor: pointer;
     border: solid 2px var(--main-red);
     color: var(--main-red);
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in;
 }
 
-.btnInput:hover {
+#restartBtn {
+    padding: 6px;
+    margin-top: 1rem;
+}
+
+.btnInput:hover, #restartBtn:hover {
     background-color: var(--main-red);
     color: var(--main-white);
 }
 
+
+/* Estilos scoreBoard */
 .scoreBoard {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
@@ -109,6 +119,7 @@ body {
     border-radius: 8px;
 }
 
+/* Botones e Iconos Piedra Papel Tijera */
 .btnContainer {
     display: flex;
     justify-content: space-around;
@@ -125,7 +136,7 @@ body {
     border-radius: 50%;
     border: 4px dotted var(--main-red);
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in;
 }
 
 .btnSelect:hover {
@@ -144,4 +155,43 @@ body {
     display: block;
     margin-top: 10px;
     color: var(--main-white);
+}
+
+/* Estilos historyTable */
+.historyGames {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.wGames, lGames {
+    text-align: center;
+}
+
+.crown {
+    color: gold;
+}
+
+.x {
+    color: var(--main-red);
+}
+
+/* Reset boton */
+#resetAll {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 1rem;
+    cursor: pointer;
+    border: solid 2px var(--main-white);
+    background-color: var(--main-gray);
+    color: var(--main-white);
+    transition: background-color 0.3s ease-in;
+}
+
+#resetAll:hover {
+    background-color: var(--main-white);
+    color: var(--main-gray);
+    border: dotted 5px var(--main-red);
 }
