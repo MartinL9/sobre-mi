@@ -3,7 +3,10 @@ const iconInput = document.getElementById('iconInput');
 const textInput = document.getElementById('textInput');
 const submitBtn = document.getElementById('submitBtn');
 const restartBtn = document.getElementById('restartBtn');
-const outputDiv = document.getElementById('output');
+const outputSpan = document.getElementById('output');
+const userPlay = document.getElementById('userChoice');
+const computerPlay = document.getElementById('comChoice');
+const vsSpan = document.getElementById('vsSpan');
 const btnPiedra = document.getElementById('piedra');
 const btnPapel = document.getElementById('papel');
 const btnTijera = document.getElementById('tijera');
@@ -54,6 +57,9 @@ function resetGame() {
     scoreSp.textContent = '0 - 0';
     resultP.textContent = '';
     restartBtn.style.display = 'none';
+    userPlay.textContent = '';
+    computerPlay.textContent = '';
+    vsSpan.textContent = '';
     enableButtonsChoice();
 }
 
@@ -66,7 +72,7 @@ function resetAll() {
     spanWin.innerHTML = '<i class="fa-solid fa-crown crown"></i>';
     spanLose.innerHTML = '<i class="fa-solid fa-x x"></i>';
     spanTotal.innerHTML = '';
-    outputDiv.textContent = 'TU';
+    outputSpan.textContent = 'TU';
     pInput.style.display = 'inline';
     iconInput.style.verticalAlign = 'middle';
     iconInput.style.marginTop = '27px';
@@ -82,7 +88,7 @@ function userSubmission() {
 
     if (inputText.trim() !== '' && inputText.length <= 20 && !containBw) {
         userName = inputText;
-        outputDiv.textContent = inputText;
+        outputSpan.textContent = inputText;
         pInput.style.display = 'none';
         iconInput.style.display = 'none';
         textInput.style.display = 'none';
@@ -95,6 +101,16 @@ function userSubmission() {
     }
 }
 
+function showChoice(choice) {
+    if(choice === 'piedra') {
+        return '<i class="fa-solid fa-hand-back-fist fa-7x iRock"></i> <span class="icon-text iRock">Piedra</span>';
+    } else if(choice === 'papel') {
+        return '<i class="fa-solid fa-hand fa-7x iPaper"></i> <span class="icon-textP iPaper">Papel</span>';
+    } else {
+        return '<i class="fa-solid fa-hand-scissors fa-7x iScissors"></i> <span class="icon-textT iScissors">Tijera</span>';
+    }
+}
+
 function comChoice() {
     const randomNumber = Math.floor(Math.random() * 3);
 
@@ -102,15 +118,12 @@ function comChoice() {
     switch (randomNumber) {
         case 0: 
             comChoice = 'piedra';
-            console.log('case 0');
             break;
         case 1:
-            comChoice = 'papel';
-            console.log('case 1');
+            comChoice = 'papel';;
             break;
         case 2: 
             comChoice = 'tijera';
-            console.log('case 2');
             break;
     } 
     return comChoice;
@@ -143,11 +156,9 @@ function detResultWin(playerResult, compResult) {
     }
 }
 
-let consecResults = 0;
-
 function playGame() {
     let compPlay = comChoice();
-    let result = detWinner(compPlay, userChoice);
+    let result = detWinner(userChoice, compPlay);
 
     clearResult();
 
@@ -160,9 +171,16 @@ function playGame() {
     } else if(result === 'Perdiste') {
         comScore++;
     } else if(result === 'Empate') {
-        return;
+        resultP.innerHTML = 'Empate';
+        totalRounds--;
     }
     
+    userPlay.classList.add('collisionUser');
+    computerPlay.classList.add('collisionCom');
+
+    userPlay.innerHTML = showChoice(userChoice);
+    computerPlay.innerHTML = showChoice(compPlay);
+    vsSpan.innerText = 'VS';
     scoreSp.textContent = `${userScore} - ${comScore}`;
     totalRounds++;
 
