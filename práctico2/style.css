@@ -98,6 +98,142 @@ body {
     color: var(--main-white);
 }
 
+/* Estilos y Animaciones matchDiv */
+.matchDiv {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.vsSpan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userChoice, .comChoice {
+    display: inline-block;
+    position: relative;
+}
+
+.icon-text, .icon-textP, .icon-textT {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    color: var(--main-gray);
+}
+
+.icon-text {
+    top: 45%;
+    left: 53%
+}
+
+.icon-textP {
+    top: 67%;
+    left: 54%;
+}
+
+.icon-textT {
+    top: 51%;
+    left: 67%;
+} 
+
+.userChoice .iRock,
+.comChoice .iRock,
+.userChoice .iPaper,
+.comChoice .iPaper,
+.userChoice .iScissors,
+.comChoice .iScissors {
+    transition: transform 0.5s ease-in-out;
+}
+
+.userChoice.collisionUser .iRock {
+    animation: collisionUserR 0.5s ease-in-out;
+}
+
+@keyframes collisionUserR {
+    0%, 100% {
+        transform: translate(0);
+        top: 35%;
+        left: 40%;  
+    }
+    50% {
+        transform: translate(70px, 0);
+    }
+}
+
+.userChoice.collisionUser .iPaper {
+    animation: collisionUserP 0.5s ease-in-out;
+}
+
+@keyframes collisionUserP {
+    0%, 100% {
+        transform: translate(0);
+        top: 57%;
+        left: 43%;  
+    }
+    50% {
+        transform: translate(70px, 0);
+    }
+}
+
+.userChoice.collisionUser .iScissors {
+    animation: collisionUserS 0.5s ease-in-out;
+}
+
+@keyframes collisionUserS {
+    0%, 100% {
+        transform: translate(0);
+        top: 41%;
+        left: 56%;  
+    }
+    50% {
+        transform: translate(70px, 0);
+    }
+}
+
+.comChoice.collisionCom .iRock {
+    animation: collisionComR 0.5s ease-in-out;
+}
+
+@keyframes collisionComR {
+    0%, 100% {
+        transform: translate(0);
+        top: 35%;
+        left: 40%;
+    }
+    50% {
+        transform: translate(-70px, 0);
+    }
+}
+
+.comChoice.collisionCom .iPaper {
+    animation: collisionComP 0.5s ease-in-out;
+}
+
+@keyframes collisionComP {
+    0%, 100% {
+        transform: translate(0);
+        top: 57%;
+        left: 43%;  
+    }
+    50% {
+        transform: translate(-70px, 0);
+    }
+}
+
+.comChoice.collisionCom .iScissors {
+    animation: collisionComS 0.5s ease-in-out;
+}
+
+@keyframes collisionComS {
+    0%, 100% {
+        transform: translate(0);
+        top: 41%;
+        left: 56%;  
+    }
+    50% {
+        transform: translate(-70px, 0);
+    }
+}
 
 /* Estilos scoreBoard */
 .scoreBoard {
@@ -165,7 +301,7 @@ body {
     margin-top: 1rem;
 }
 
-.wGames, lGames {
+.wGames, .lGames {
     text-align: center;
 }
 
@@ -179,6 +315,9 @@ body {
 
 /* Reset boton */
 #resetAll {
+    position: absolute;
+    top: 10px;
+    right: 10px;
     width: 80px;
     height: 80px;
     border-radius: 50%;
