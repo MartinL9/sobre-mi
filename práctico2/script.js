@@ -16,7 +16,7 @@ const spanWin = document.getElementById('spanWin');
 const spanLose = document.getElementById('spanLose');
 const spanTotal = document.getElementById('spanTotal');
 const resetAllInfo = document.getElementById('resetAll');
-const bannedWords = ['asesinato', 'masacre', 'suicido', 'canibal', 'decapitar', 'matar', 'cadaver', 'matanza', 'crucificado','fascista', 'nazi', 'esclavo','hitler']
+const bannedWords = ['asesino', 'asesinato', 'masacre', 'suicido', 'canibal', 'decapitar', 'matar', 'cadaver', 'matanza', 'crucificado','fascista', 'nazi', 'esclavo','hitler']
 
 let userName = '';
 let userScore = 0;
@@ -120,7 +120,7 @@ function comChoice() {
             comChoice = 'piedra';
             break;
         case 1:
-            comChoice = 'papel';;
+            comChoice = 'papel';
             break;
         case 2: 
             comChoice = 'tijera';
@@ -156,6 +156,27 @@ function detResultWin(playerResult, compResult) {
     }
 }
 
+function showWinner(winner) {
+    const blurBackground = document.getElementById('blurBackground');
+    const winnerBanner = document.getElementById('winnerBanner');
+    const winnerName = document.getElementById('winnerName');
+
+    winnerName.textContent = winner;
+
+    blurBackground.style.display = 'block';
+    winnerBanner.style.display = 'block';
+
+    function hideWinnerBanner() {
+        blurBackground.style.display = 'none';
+        winnerBanner.style.display = 'none';
+    }
+
+    winnerBanner.addEventListener('click', function (e) {
+        e.stopPropagation();
+        hideWinnerBanner();
+    });
+}
+
 function playGame() {
     let compPlay = comChoice();
     let result = detWinner(userChoice, compPlay);
@@ -185,6 +206,8 @@ function playGame() {
     totalRounds++;
 
     if(totalRounds === 5) {
+        const winner = detResultWin(userScore, comScore);
+        showWinner(winner);
         resultP.innerHTML = `El ganador fue: ` + detResultWin(userScore, comScore) + `<br>El juego ha terminado, Reinicie el juego para volver a jugar.`;
         disableButtonsChoice();
         showResetBtn();
