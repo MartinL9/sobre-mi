@@ -13,7 +13,7 @@ Puedes ver cuántos juegos has ganado y cuántos has perdido en el historial, ju
 - **Selección de nombre de usuario:** Ingresa tu nombre para iniciar el juego.
 - **Elección entre Piedra, Papel o Tijera:** Haz clic en los botones correspondientes para hacer tu elección.
 - **Seguimiento de juegos:** Mira cuántos juegos has ganado, cuántos has perdido y cuántos juegos has jugado en total.
-- **Reinicio del juego:** Puedes reiniciar el juego en cualquier momento para volver a jugar.
+- **Reinicio del juego:** Puedes reiniciar el juego al finalizar una ronda para volver a jugar.
 - **Reinicio total del usuario:** Si lo deseas, puedes reiniciar toda la información del usuario guardada.
 
 ## Cómo jugar
