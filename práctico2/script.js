@@ -112,17 +112,6 @@ function showChoice(choice, isUser) {
     }
 }
 
-/*
-function showChoice(choice) {
-    if(choice === 'piedra') {
-        return '<i class="fa-solid fa-hand-back-fist fa-7x iRock"></i> <span class="icon-text iRock">Piedra</span>';
-    } else if(choice === 'papel') {
-        return '<i class="fa-solid fa-hand fa-7x iPaper"></i> <span class="icon-textP iPaper">Papel</span>';
-    } else {
-        return '<i class="fa-solid fa-hand-scissors fa-7x iScissors"></i> <span class="icon-textT iScissors">Tijera</span>';
-    }
-}
-*/
 function comChoice() {
     const randomNumber = Math.floor(Math.random() * 3);
 
@@ -233,14 +222,7 @@ function playGame() {
             userLosses++;
             spanLose.innerHTML = `<i class="fa-solid fa-x x"></i> ${userLosses}`;
         }
-    } else if(totalRounds === 5) {
-        showWinner('Empate');
-        resultP.innerHTML = 'El juego ha terminado en empate, Reinicie el juego para volver a jugar.';
-        disableButtonsChoice();
-        showResetBtn();
-        totalGames += 1;
-        spanTotal.innerHTML = ` ${totalGames}`;
-    }
+    } 
 }
 
 submitBtn.addEventListener('click', userSubmission); 
