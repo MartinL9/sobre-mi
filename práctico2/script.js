@@ -1,3 +1,4 @@
+// VARIABLES
 const pInput = document.getElementById('pInput');
 const iconInput = document.getElementById('iconInput');
 const textInput = document.getElementById('textInput');
@@ -28,28 +29,33 @@ let totalGames = 0;
 
 disableButtonsChoice();
 
+// DESABILITA LOS BOTONES DE ELECCIÓN
 function disableButtonsChoice() {
     btnPiedra.setAttribute('disabled', true);
     btnPapel.setAttribute('disabled', true);
     btnTijera.setAttribute('disabled', true);
 }
 
+// HABILITA LOS BOTONES DE ELECCIÓN
 function enableButtonsChoice() {
     btnPapel.removeAttribute('disabled');
     btnPiedra.removeAttribute('disabled');
     btnTijera.removeAttribute('disabled');
 }
 
+// MUESTRA EL BOTÓN DE REINICIO DEL JUEGO
 function showResetBtn() {
     restartBtn.style.display = 'block';
 }
 
+// ELIMINA LOS RESULTADOS DE LA RONDA ANTERIOR
 function clearResult() {
     while(resultP.firstChild) {
         resultP.removeChild(resultP.firstChild);
     }
 }
 
+// FUNCION PARA REINICIAR EL JUEGO
 function resetGame() {
     userScore = 0;
     comScore = 0;
@@ -63,6 +69,7 @@ function resetGame() {
     enableButtonsChoice();
 }
 
+// FUNCION PARA REINICIAR TODA LA INFORMACIÓN DE USUARIO
 function resetAll() {
     resetGame();
     userName = '';
@@ -82,6 +89,7 @@ function resetAll() {
     disableButtonsChoice();
 }
 
+// COMPROBACION DE ENTRADA DEL USUARIO
 function userSubmission() {
     const inputText = textInput.value;
     const containBw = bannedWords.some(word => inputText.toLowerCase().includes(word.toLowerCase()));
@@ -101,6 +109,7 @@ function userSubmission() {
     }
 }
 
+// MUESTRA LAS ELECCIONES EN PANTALLA 
 function showChoice(choice, isUser) {
     let flipClass = isUser ? 'fa-flip-horizontal' : '';
     if (choice === 'piedra') {
@@ -112,6 +121,7 @@ function showChoice(choice, isUser) {
     }
 }
 
+// ELECCION DE COMPUTADORA
 function comChoice() {
     const randomNumber = Math.floor(Math.random() * 3);
 
@@ -130,11 +140,13 @@ function comChoice() {
     return comChoice;
 }
 
+// ELECCION DE JUGADOR
 function playerChoice(play) {
     userChoice = play.toLowerCase();
     playGame();
 }
 
+// DETERMINAR GANADOR DE RONDA
 function detWinner(resultPlayer, resultComp) {
     if (resultPlayer === resultComp) {
         return 'Empate';
@@ -149,6 +161,7 @@ function detWinner(resultPlayer, resultComp) {
     }
 }
 
+// DETERMINAR GANADOR DE JUEGO
 function detResultWin(playerResult, compResult) {
     if(playerResult > compResult) {
         return userName;
@@ -157,6 +170,7 @@ function detResultWin(playerResult, compResult) {
     }
 }
 
+// MUESTRA EL CARTEL DEL GANADOR
 function showWinner(winner) {
     const blurBackground = document.getElementById('blurBackground');
     const winnerBanner = document.getElementById('winnerBanner');
@@ -178,6 +192,7 @@ function showWinner(winner) {
     });
 }
 
+// FUNCION PRINCIPAL DEL JUEGO
 function playGame() {
     let compPlay = comChoice();
     let result = detWinner(userChoice, compPlay);
@@ -225,6 +240,7 @@ function playGame() {
     } 
 }
 
+// EVENTOS
 submitBtn.addEventListener('click', userSubmission); 
 btnPiedra.addEventListener('click', () => playerChoice('piedra'));
 btnPapel.addEventListener('click', () => playerChoice('papel'));
