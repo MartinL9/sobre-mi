@@ -29,7 +29,6 @@ body {
     font-size: 5rem;
 }
 
-
 /* Estilos container, input usuario, botones submitBtn y restartBtn */
 .container {
     background-color: var(--main-gray);
@@ -118,7 +117,7 @@ body {
 .icon-text, .icon-textP, .icon-textT {
     position: absolute;
     transform: translate(-50%, -50%);
-    color: var(--main-gray);
+    color: rgb(133,51,66);
 }
 
 .icon-text {
@@ -136,35 +135,26 @@ body {
     left: 67%;
 } 
 
-.userChoice .iRock,
-.comChoice .iRock,
-.userChoice .iPaper,
-.comChoice .iPaper,
-.userChoice .iScissors,
-.comChoice .iScissors {
-    transition: transform 0.5s ease-in-out;
+.userChoice.collisionUser .sRockU {
+    animation: collisionUserSpanRock 0.5s ease-in-out;
 }
 
-.userChoice.collisionUser .iRock {
-    animation: collisionUserR 0.5s ease-in-out;
-}
-
-@keyframes collisionUserR {
+@keyframes collisionUserSpanRock {
     0%, 100% {
         transform: translate(0);
         top: 35%;
-        left: 40%;  
+        left: 40%;
     }
     50% {
         transform: translate(70px, 0);
     }
 }
 
-.userChoice.collisionUser .iPaper {
-    animation: collisionUserP 0.5s ease-in-out;
+.userChoice.collisionUser .sPaperU {
+    animation: collisionUserSpanPaper 0.5s ease-in-out;
 }
 
-@keyframes collisionUserP {
+@keyframes collisionUserSpanPaper {
     0%, 100% {
         transform: translate(0);
         top: 57%;
@@ -175,18 +165,33 @@ body {
     }
 }
 
-.userChoice.collisionUser .iScissors {
-    animation: collisionUserS 0.5s ease-in-out;
+.userChoice.collisionUser .sScisU {
+    animation: collisionUserSpanScsissor 0.5s ease-in-out;
 }
 
-@keyframes collisionUserS {
+@keyframes collisionUserSpanScsissor {
     0%, 100% {
         transform: translate(0);
-        top: 41%;
-        left: 56%;  
+        top:41%;
+        left: 56%;
     }
     50% {
         transform: translate(70px, 0);
+    }
+}
+
+.userChoice.collisionUser .iRock,
+.userChoice.collisionUser .iPaper,
+.userChoice.collisionUser .iScissors {
+    animation: collisionUserIcons 0.5s ease-in-out;
+}
+
+@keyframes collisionUserIcons {
+    0%, 100% {
+        transform: translate(0) scaleX(-1);
+    }
+    50% {
+        transform: translate(70px, 0) scaleX(-1);
     }
 }
 
@@ -233,6 +238,20 @@ body {
     50% {
         transform: translate(-70px, 0);
     }
+}
+
+.userChoice .fa-hand,
+.userChoice .fa-hand-back-fist,
+.userChoice .fa-hand-scissors {
+    box-shadow: inset -30px 30px 150px var(--main-red), 0 0 50px var(--main-red);
+    border-radius: 45%;
+}
+
+.comChoice .fa-hand,
+.comChoice .fa-hand-back-fist,
+.comChoice .fa-hand-scissors {
+    box-shadow: inset 30px 30px 150px var(--main-red), 0 0 50px var(--main-red);
+    border-radius: 45%;
 }
 
 /* Estilos scoreBoard */
@@ -329,6 +348,7 @@ body {
     color: gold;
     background-color: var(--main-gray);
     box-shadow: 0px 0px 8px rgba(255, 215, 0, 0.8);
+    cursor: pointer;
 }
 
 .center-content {

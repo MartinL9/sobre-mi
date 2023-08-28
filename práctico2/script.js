@@ -101,6 +101,18 @@ function userSubmission() {
     }
 }
 
+function showChoice(choice, isUser) {
+    let flipClass = isUser ? 'fa-flip-horizontal' : '';
+    if (choice === 'piedra') {
+        return `<i class="fa-solid fa-hand-back-fist fa-7x ${flipClass} iRock"></i> <span class="icon-text sRockU sRockC">Piedra</span>`;
+    } else if (choice === 'papel') {
+        return `<i class="fa-solid fa-hand fa-7x ${flipClass} iPaper"></i> <span class="icon-textP sPaperU sPaperC">Papel</span>`;
+    } else {
+        return `<i class="fa-solid fa-hand-scissors fa-7x ${flipClass} iScissors"></i> <span class="icon-textT sScisU sScisC">Tijera</span>`;
+    }
+}
+
+/*
 function showChoice(choice) {
     if(choice === 'piedra') {
         return '<i class="fa-solid fa-hand-back-fist fa-7x iRock"></i> <span class="icon-text iRock">Piedra</span>';
@@ -110,7 +122,7 @@ function showChoice(choice) {
         return '<i class="fa-solid fa-hand-scissors fa-7x iScissors"></i> <span class="icon-textT iScissors">Tijera</span>';
     }
 }
-
+*/
 function comChoice() {
     const randomNumber = Math.floor(Math.random() * 3);
 
@@ -199,13 +211,13 @@ function playGame() {
     userPlay.classList.add('collisionUser');
     computerPlay.classList.add('collisionCom');
 
-    userPlay.innerHTML = showChoice(userChoice);
-    computerPlay.innerHTML = showChoice(compPlay);
+    userPlay.innerHTML = showChoice(userChoice, true);
+    computerPlay.innerHTML = showChoice(compPlay, false);
     vsSpan.innerText = 'VS';
     scoreSp.textContent = `${userScore} - ${comScore}`;
     totalRounds++;
 
-    if(totalRounds === 5) {
+    if(userScore === 3 || comScore === 3) {
         const winner = detResultWin(userScore, comScore);
         showWinner(winner);
         resultP.innerHTML = `El ganador fue: ` + detResultWin(userScore, comScore) + `<br>El juego ha terminado, Reinicie el juego para volver a jugar.`;
@@ -221,6 +233,13 @@ function playGame() {
             userLosses++;
             spanLose.innerHTML = `<i class="fa-solid fa-x x"></i> ${userLosses}`;
         }
+    } else if(totalRounds === 5) {
+        showWinner('Empate');
+        resultP.innerHTML = 'El juego ha terminado en empate, Reinicie el juego para volver a jugar.';
+        disableButtonsChoice();
+        showResetBtn();
+        totalGames += 1;
+        spanTotal.innerHTML = ` ${totalGames}`;
     }
 }
 
